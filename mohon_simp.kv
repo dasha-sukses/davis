@@ -1,0 +1,332 @@
+<Mohon_Simp_Page>:
+    MDFloatLayout:
+        canvas:
+            Color:
+                rgb: rgba(192,192,192,255)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+    MDTopAppBar:
+        id: mohonsimp
+        name: "mohonsimp"
+        title:"Permohonan Simpanan Baru"
+        #size_hint_y: 0.08
+        pos_hint: {"top" : 1}
+        #left_action_items: [['view-list-outline', lambda x: app.pindah_ke(1,1)]]
+        right_action_items: [['select-group', lambda x: app.pindah_ke(0,2)]]
+
+    # form entry daftar anak
+    MDFloatLayout:
+        size_hint: .95,.78
+        pos_hint:{'center_x':.5, 'y':.1 }
+        canvas:
+            Color:
+                rgb: rgba(255, 255, 255,255)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        MDLabel:
+            text: 'Nomor Anggota'
+            font_size: '12dp'
+            size_hint: .5, .1
+            pos_hint: {"x":.05, "y": .9}
+        MDTextField:
+            id: nama
+            text: '1000101'
+            disabled: True
+            font_size: "12dp"
+            color_mode: 'custom'
+            line_color_focus: 0, 0, 0, 1
+            line_color_normal: 0, 0, 0, 1
+            current_hint_text_color: rgba(77, 80, 84,255)
+            size_hint_x: .2
+            pos_hint: {"x":.3, "y": .9}
+
+        MDLabel:
+            text: 'NIK / NIP'
+            font_size: '12dp'
+            size_hint: .5, .1
+            pos_hint: {"x":.55, "y": .9}
+        MDTextField:
+            id: nik
+            text: '050109210001'
+            disabled: True
+            font_size: "12dp"
+            color_mode: 'custom'
+            line_color_focus: 0, 0, 0, 1
+            line_color_normal: 0, 0, 0, 1
+            current_hint_text_color: rgba(77, 80, 84,255)
+            size_hint_x: .25
+            pos_hint: {"x":.7, "y": .9}
+
+        MDLabel:
+            text: 'Nama Lengkap'
+            font_size: '12dp'
+            size_hint: .5, .1
+            pos_hint: {"x":.05, "y": .83}
+        MDTextField:
+            id: tempat_lhr
+            text: 'Wibowo Demo Saja'
+            disabled: True
+            font_size: "12dp"
+            color_mode: 'custom'
+            line_color_focus: 0, 0, 0, 1
+            line_color_normal: 0, 0, 0, 1
+            current_hint_text_color: rgba(77, 80, 84,255)
+            size_hint_x: .65
+            pos_hint: {"x":.3, "y": .83}
+
+        MDLabel:
+            text: 'Alamat KTP'
+            font_size: '12dp'
+            size_hint: .5, .1
+            pos_hint: {"x":.05, "y": .76}
+        MDTextField:
+            id: alamat_ktp
+            text: 'Ds.Puyoh Raya RT.02/01 Jurang Dawe Kudus'
+            disabled: True
+            font_size: "12dp"
+            color_mode: 'custom'
+            line_color_focus: 0, 0, 0, 1
+            line_color_normal: 0, 0, 0, 1
+            current_hint_text_color: rgba(77, 80, 84,255)
+            size_hint_x: .65
+            pos_hint: {"x":.3, "y": .76}
+
+        MDLabel:
+            text: 'Alamat Domisili'
+            font_size: '12dp'
+            size_hint: .5, .1
+            pos_hint: {"x":.05, "y": .69}
+        MDTextField:
+            id: alamat_kos
+            text: 'Jln Cempaka Demo RT.02/01 Durian Jakarta Selatan'
+            disabled: True
+            font_size: "12dp"
+            color_mode: 'custom'
+            line_color_focus: 0, 0, 0, 1
+            line_color_normal: 0, 0, 0, 1
+            current_hint_text_color: rgba(77, 80, 84,255)
+            size_hint_x: .65
+            pos_hint: {"x":.3, "y": .69}
+
+        MDLabel:
+            text: 'No. Telp & HP '
+            font_size: '12dp'
+            size_hint: .5, .1
+            pos_hint: {"x":.05, "y": .62}
+        MDTextField:
+            id: telp
+            text: '08130300702 / 081505050099'
+            disabled: True
+            font_size: "12dp"
+            color_mode: 'custom'
+            line_color_focus: 0, 0, 0, 1
+            line_color_normal: 0, 0, 0, 1
+            current_hint_text_color: rgba(77, 80, 84,255)
+            size_hint_x: .35
+            pos_hint: {"x":.3, "y": .62}
+
+        MDLabel:
+            text: 'Kode Pos'
+            font_size: '12dp'
+            size_hint: .5, .1
+            pos_hint: {"x":.68, "y": .62}
+        MDTextField:
+            id: kode_pos
+            text: '72067'
+            disabled: True
+            font_size: "12dp"
+            color_mode: 'custom'
+            line_color_focus: 0, 0, 0, 1
+            line_color_normal: 0, 0, 0, 1
+            current_hint_text_color: rgba(77, 80, 84,255)
+            size_hint_x: .1
+            pos_hint: {"x":.85, "y": .62}
+
+        MDLabel:
+            text: 'Jabatan'
+            font_size: '12dp'
+            size_hint: .5, .1
+            pos_hint: {"x":.05, "y": .55}
+        MDTextField:
+            id: jabatan
+            text:'Kabag Marketing'
+            disabled: True
+            font_size: "12dp"
+            color_mode: 'custom'
+            line_color_focus: 0, 0, 0, 1
+            line_color_normal: 0, 0, 0, 1
+            current_hint_text_color: rgba(77, 80, 84,255)
+            size_hint_x: .35
+            pos_hint: {"x":.3, "y": .55}
+
+        MDLabel:
+            text: 'Stts Kary'
+            font_size: '12dp'
+            size_hint: .5, .1
+            pos_hint: {"x":.68, "y": .55}
+        MDTextField:
+            id: kode_pos
+            text: 'Tetap'
+            disabled: True
+            font_size: "12dp"
+            color_mode: 'custom'
+            line_color_focus: 0, 0, 0, 1
+            line_color_normal: 0, 0, 0, 1
+            current_hint_text_color: rgba(77, 80, 84,255)
+            size_hint_x: .1
+            pos_hint: {"x":.85, "y": .55}
+
+        MDLabel:
+            text: "Dengan ini saya sebagai anggota mengajukan untuk pembukaan rekening simpanan baru:"
+            italic: True
+            markup: True
+            font_size: '12dp'
+            size_hint: .9, .1
+            pos_hint: {"x":.05, "y": .45}
+
+        MDLabel:
+            text: 'Simpanan'
+            font_size: '12dp'
+            size_hint: .5, .1
+            pos_hint: {"x":.05, "y": .38}
+        MDTextField:
+            id: produk
+            disabled: True
+            font_size: "12dp"
+            color_mode: 'custom'
+            line_color_focus: 0, 0, 0, 1
+            line_color_normal: 0, 0, 0, 1
+            current_hint_text_color: rgba(77, 80, 84,255)
+            size_hint_x: .4
+            pos_hint: {"x":.3, "y": .38}
+        MDIconButton:
+            id: produkcmd
+            icon: "text-search"
+            user_font_size: '20dp'
+            pos_hint: {"x":.72, "y": .38}
+            on_release: root.cari_produk()
+
+        MDLabel:
+            id:setoranlbl
+            text: 'Setoran/ Bulan'
+            font_size: '12dp'
+            size_hint: .5, .1
+            pos_hint: {"x":.05, "y": .3}
+        MDTextField:
+            id: setoran
+            text: self.text if len(self.text)<=9 else self.text[:9]
+            input_filter: "int"
+            font_size: "12dp"
+            color_mode: 'custom'
+            line_color_focus: 0, 0, 0, 1
+            line_color_normal: 0, 0, 0, 1
+            current_hint_text_color: rgba(77, 80, 84,255)
+            size_hint_x: .3
+            pos_hint: {"x":.3, "y": .3}
+            on_text: setorantxt.text=app.format_angka(self.text)
+        MDLabel:
+            id: setorantxt
+            text: '-'
+            font_size: '10dp'
+            italic: True
+            theme_text_color: "Custom"
+            text_color: rgba(140, 140, 140, 255)
+            size_hint: .3, .1
+            pos_hint: {"x":.3, "y": .27}
+
+        MDBoxLayout:
+            size_hint: .35, .05
+            pos_hint: {'x':.63, 'y':.33}
+            orientation: 'horizontal'
+            md_bg_color: rgba(0, 255, 255,255)
+
+            MDCheckbox:
+                id: potong
+                active: True
+                size_hint: None, None
+                size: '20dp', '20dp'
+                pos_hint: {"center_y": .5}
+            MDLabel:
+                id: potonglbl
+                text: 'Potong Gaji'
+                font_size: '12dp'
+                size_hint: .25, .1
+                pos_hint: {"center_y": .5}
+
+        MDLabel:
+            id: waktulbl
+            text: 'Jangka Waktu'
+            opacity: 0
+            font_size: '12dp'
+            size_hint: .5, .1
+            pos_hint: {"x":.05, "y": .22}
+        MDTextField:
+            id: waktu
+            disabled: True
+            opacity: 0
+            font_size: "12dp"
+            color_mode: 'custom'
+            line_color_focus: 0, 0, 0, 1
+            line_color_normal: 0, 0, 0, 1
+            current_hint_text_color: rgba(77, 80, 84,255)
+            size_hint_x: .2
+            pos_hint: {"x":.3, "y": .22}
+        MDIconButton:
+            id: waktucmd
+            disabled : True
+            opacity: 0
+            icon: "text-search"
+            user_font_size: '20dp'
+            pos_hint: {"x":.52, "y": .22}
+            on_release: root.cari_waktu()
+
+        MDLabel:
+            id: tranfer
+            text: ''
+            size_hint: .9, .2
+            font_size: "11dp"
+            color_mode: 'custom'
+            pos_hint: {"x":.05, "y": .08}
+
+        MDBoxLayout:
+            size_hint: .9, .1
+            pos_hint: {'x':.05, 'y':.0}
+
+            MDRectangleFlatButton:
+                id:cmdktp
+                text: "Foto Slip Gaji"
+                text_color: "blue"
+                line_color: "blue"
+                font_size: '10sp'
+                size_hint_y: .5
+                pos_hint: {'center_y':.5}
+                on_release: root.add_gambar('P1')
+            MDLabel:
+                text: ' '
+                font_size: '12dp'
+                size_hint: .05, .1
+                pos_hint: {'center_y':.5}
+
+            MDRectangleFlatButton:
+                id:cmdsimpan
+                text: "Upload"
+                text_color: "blue"
+                line_color: "blue"
+                font_size: '10sp'
+                size_hint_y: .5
+                pos_hint: {'center_y':.5}
+                on_release: root.simpan()
+
+    MDFloatLayout:
+        size_hint: 1, .08
+        pos_hint: {'center_x':.5,'y':0}
+        canvas:
+            Color:
+                rgb: rgba(50, 96, 168,255)
+            Rectangle:
+                pos: self.pos
+                size: self.size

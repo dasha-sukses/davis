@@ -1,0 +1,167 @@
+<Menu_Page>:
+    MDFloatLayout:
+        md_bg_color: rgba(209, 211, 222,255)
+
+    MDFloatLayout:
+        size_hint_y: .45
+        pos_hint: {'center_y':.78}
+        md_bg_color: rgba(17, 52, 145,255)
+
+    MDTopAppBar:
+        id: menubar
+        name: "menubar"
+        title:"Menu Utama"
+        #anchor_title: 'center'
+        #size_hint_y: 0.08
+        pos_hint: {"top" : 1}
+        #left_action_items: [['view-list-outline', lambda x: app.pindah_ke(0,0)]]
+
+    MDIconButton:
+        icon: "location-exit"
+        #icon_size: "64sp"
+        pos_hint: {"center_x": .5, "y": .01}
+        on_release:
+            app.get_running_app().stop()
+
+    MDFloatLayout:
+        size_hint: .84, .75
+        pos_hint: {'center_x':.5, 'y':.1}
+        md_bg_color: rgba(255, 255, 255,255)
+
+        MDBoxLayout:
+            size_hint: .4, .2
+            pos_hint: {'x':.1, 'y':.8}
+            orientation: 'vertical'
+            #md_bg_color: rgba(0, 255, 255,255)
+
+            MDIconButton:
+                icon: "image/icon-daftar.png"
+                pos_hint: {'center_x':.5}
+                on_release:
+                    app.pindah_ke(2,1)
+            MDLabel:
+                text: 'Buka Rek.Simpanan'
+                halign: 'center'
+                font_size: '12dp'
+                color: 0,0,1,1
+                bold: True
+                italic: True
+                size_hint: 1, .1
+
+        MDBoxLayout:
+            size_hint: .4, .2
+            pos_hint: {'x':.1, 'y':.5}
+            orientation: 'vertical'
+            #md_bg_color: rgba(0, 255, 255,255)
+
+            MDIconButton:
+                icon: "image/icon-orang.png"
+                pos_hint: {'center_x':.5}
+                on_release:
+                    app.pindah_ke(3,1)
+            MDLabel:
+                text: 'Perubahan Simpanan'
+                halign: 'center'
+                font_size: '12dp'
+                color: 0,0,1,1
+                bold: True
+                italic: True
+                size_hint: 1, .1
+
+        MDBoxLayout:
+            size_hint: .4, .2
+            pos_hint: {'x':.1, 'y':.2}
+            orientation: 'vertical'
+            #md_bg_color: rgba(0, 255, 255,255)
+
+            MDIconButton:
+                icon: "image/icon-belanja.png"
+                pos_hint: {'center_x':.5}
+                on_release:
+                    #app.pindah_ke(4,0)
+                    root.laporan()
+            MDLabel:
+                text: 'Lap/Riwayat Transaksi'
+                halign: 'center'
+                font_size: '12dp'
+                color: 0,0,1,1
+                bold: True
+                italic: True
+                size_hint: 1, .1
+
+        MDBoxLayout:
+            size_hint: .4, .2
+            pos_hint: {'x':.53, 'y':.8}
+            orientation: 'vertical'
+            #md_bg_color: rgba(255, 0, 255,255)
+
+            MDIconButton:
+                icon: "image/icon-rumah.png"
+                pos_hint: {'center_x':.5}
+                on_release:
+                    app.pindah_ke(5,1)
+            MDLabel:
+                text: 'Pengajuan Pinjaman'
+                halign: 'center'
+                font_size: '12dp'
+                color: 0,0,1,1
+                bold: True
+                italic: True
+                size_hint: 1, .1
+
+        MDBoxLayout:
+            size_hint: .4, .2
+            pos_hint: {'x':.53, 'y':.5}
+            orientation: 'vertical'
+            #md_bg_color: rgba(255, 0, 255,255)
+
+            MDIconButton:
+                icon: "image/icon-bayar.png"
+                pos_hint: {'center_x':.5}
+                on_release:
+                    app.pindah_ke(6,1)
+            MDLabel:
+                text: 'Pelunasan Pinjaman'
+                halign: 'center'
+                font_size: '12dp'
+                color: 0,0,1,1
+                bold: True
+                italic: True
+                size_hint: 1, .1
+
+        MDBoxLayout:
+            size_hint: .4, .2
+            pos_hint: {'x':.53, 'y':.2}
+            orientation: 'vertical'
+            #md_bg_color: rgba(255, 0, 255,255)
+
+            MDIconButton:
+                icon: "image/icon-laporan.png"
+                pos_hint: {'center_x':.5}
+                on_release:
+                    app.pindah_ke(7,1)
+            MDLabel:
+                text: 'Pengajuan Ubah Tenor'
+                halign: 'center'
+                font_size: '12dp'
+                color: 0,0,1,1
+                bold: True
+                italic: True
+                size_hint: 1, .1
+
+        MDBoxLayout:
+            size_hint: .8, .1
+            pos_hint: {'x':.1, 'y':.05}
+            orientation: 'vertical'
+            #md_bg_color: rgba(255, 0, 255,255)
+            MDLabel:
+                text: "[i][ref=Permohonan Berhenti Anggota]Permohonan Berhenti Anggota[/ref][/i]"
+                font_style: "Caption"
+                font_size: "10dp"
+                markup: True
+                color: rgba(0, 0, 250, 200)
+                pos_hint: {"center_x": .5, "center_y": .5}
+                halign: "center"
+                on_ref_press:
+                    #app.pindah_ke(8,1)
+                    root.laporan()

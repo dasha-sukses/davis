@@ -1,0 +1,245 @@
+<Mohon_Pinjaman_Lunas_Page>:
+    MDFloatLayout:
+        canvas:
+            Color:
+                rgb: rgba(192,192,192,255)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+    MDTopAppBar:
+        id: mohonsimp
+        name: "mohonsimp"
+        title:"Permohonan Pelunasan Pinjaman"
+        #size_hint_y: 0.08
+        pos_hint: {"top" : 1}
+        #left_action_items: [['view-list-outline', lambda x: app.pindah_ke(1,1)]]
+        right_action_items: [['select-group', lambda x: app.pindah_ke(0,2)]]
+
+    # form entry daftar anak
+    MDFloatLayout:
+        size_hint: .95,.78
+        pos_hint:{'center_x':.5, 'y':.1 }
+        canvas:
+            Color:
+                rgb: rgba(255, 255, 255,255)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        MDLabel:
+            text: 'Nomor Anggota'
+            font_size: '12dp'
+            size_hint: .5, .1
+            pos_hint: {"x":.05, "y": .9}
+        MDTextField:
+            id: nama
+            text: '1000101'
+            disabled: True
+            font_size: "12dp"
+            color_mode: 'custom'
+            line_color_focus: 0, 0, 0, 1
+            line_color_normal: 0, 0, 0, 1
+            current_hint_text_color: rgba(77, 80, 84,255)
+            size_hint_x: .2
+            pos_hint: {"x":.3, "y": .9}
+
+        MDLabel:
+            text: 'NIK / NIP'
+            font_size: '12dp'
+            size_hint: .5, .1
+            pos_hint: {"x":.55, "y": .9}
+        MDTextField:
+            id: nik
+            text: '050109210001'
+            disabled: True
+            font_size: "12dp"
+            color_mode: 'custom'
+            line_color_focus: 0, 0, 0, 1
+            line_color_normal: 0, 0, 0, 1
+            current_hint_text_color: rgba(77, 80, 84,255)
+            size_hint_x: .25
+            pos_hint: {"x":.7, "y": .9}
+
+        MDLabel:
+            text: 'Nama Lengkap'
+            font_size: '12dp'
+            size_hint: .5, .1
+            pos_hint: {"x":.05, "y": .83}
+        MDTextField:
+            id: tempat_lhr
+            text: 'Wibowo Demo Saja'
+            disabled: True
+            font_size: "12dp"
+            color_mode: 'custom'
+            line_color_focus: 0, 0, 0, 1
+            line_color_normal: 0, 0, 0, 1
+            current_hint_text_color: rgba(77, 80, 84,255)
+            size_hint_x: .65
+            pos_hint: {"x":.3, "y": .83}
+
+        MDLabel:
+            text: 'No. Telp & HP '
+            font_size: '12dp'
+            size_hint: .5, .1
+            pos_hint: {"x":.05, "y": .76}
+        MDTextField:
+            id: telp
+            text: '08130300702 / 081505050099'
+            disabled: True
+            font_size: "12dp"
+            color_mode: 'custom'
+            line_color_focus: 0, 0, 0, 1
+            line_color_normal: 0, 0, 0, 1
+            current_hint_text_color: rgba(77, 80, 84,255)
+            size_hint_x: .65
+            pos_hint: {"x":.3, "y": .76}
+
+        MDLabel:
+            text: 'Email'
+            font_size: '12dp'
+            size_hint: .5, .1
+            pos_hint: {"x":.05, "y": .68}
+        MDTextField:
+            id: email
+            text: 'wibowo25670@gmail.com'
+            disabled: True
+            font_size: "12dp"
+            color_mode: 'custom'
+            line_color_focus: 0, 0, 0, 1
+            line_color_normal: 0, 0, 0, 1
+            current_hint_text_color: rgba(77, 80, 84,255)
+            size_hint_x: .65
+            pos_hint: {"x":.3, "y": .68}
+
+        MDLabel:
+            text: "Dengan ini saya sebagai Anggota sekaligus Debitur mengajukan pelunasan dipercepat untuk:"
+            italic: True
+            markup: True
+            font_size: '12dp'
+            size_hint: .9, .1
+            pos_hint: {"x":.05, "y": .6}
+
+        MDLabel:
+            text: 'No.Pembiayaan'
+            font_size: '12dp'
+            size_hint: .5, .1
+            pos_hint: {"x":.05, "y": .52}
+        MDTextField:
+            id: norek
+            disabled: True
+            font_size: "12dp"
+            color_mode: 'custom'
+            line_color_focus: 0, 0, 0, 1
+            line_color_normal: 0, 0, 0, 1
+            current_hint_text_color: rgba(77, 80, 84,255)
+            size_hint_x: .15
+            pos_hint: {"x":.3, "y": .52}
+        MDIconButton:
+            id: norekcmd
+            icon: "text-search"
+            user_font_size: '20dp'
+            pos_hint: {"x":.45, "y": .52}
+            on_release: root.cari_norek()
+        MDTextField:
+            id: noreknm
+            disabled: True
+            font_size: "11dp"
+            color_mode: 'custom'
+            line_color_focus: 0, 0, 0, 1
+            line_color_normal: 0, 0, 0, 1
+            current_hint_text_color: rgba(77, 80, 84,255)
+            size_hint_x: .35
+            pos_hint: {"x":.6, "y": .52}
+
+        MDLabel:
+            text: 'Atas Nama/CQ'
+            font_size: '12dp'
+            size_hint: .5, .1
+            pos_hint: {"x":.05, "y": .44}
+        MDTextField:
+            id: atasnama
+            text: ''
+            disabled: True
+            font_size: "12dp"
+            color_mode: 'custom'
+            line_color_focus: 0, 0, 0, 1
+            line_color_normal: 0, 0, 0, 1
+            current_hint_text_color: rgba(77, 80, 84,255)
+            size_hint_x: .3
+            pos_hint: {"x":.3, "y": .44}
+
+        MDLabel:
+            text: 'Saldo'
+            font_size: '12dp'
+            size_hint: .1, .1
+            pos_hint: {"x":.63, "y": .44}
+        MDTextField:
+            id: saldo
+            text: ''
+            disabled: True
+            font_size: "12dp"
+            color_mode: 'custom'
+            line_color_focus: 0, 0, 0, 1
+            line_color_normal: 0, 0, 0, 1
+            current_hint_text_color: rgba(77, 80, 84,255)
+            size_hint_x: .2
+            pos_hint: {"x":.73, "y": .44}
+
+        MDLabel:
+            id:cara
+            text: 'Cara Pelunasan'
+            font_size: '12dp'
+            size_hint: .5, .1
+            pos_hint: {"x":.05, "y": .36}
+        MDBoxLayout:
+            pos_hint: {"x":.3, "y": .38}
+            size_hint: .65, .05
+            padding:0
+            spacing:0
+            MDCheckbox:
+                group:'cara'
+                id: cara01
+                active: True
+                size_hint: None, None
+                size: '28dp', '28dp'
+                pos_hint: {"center_y": .5}
+            MDLabel:
+                text:'Potong Gaji'
+                font_size: '11dp'
+                pos_hint: {"center_y": .5}
+            MDCheckbox:
+                group:'cara'
+                id: cara02
+                active: True
+                size_hint: None, None
+                size: '28dp', '28dp'
+                pos_hint: {"center_y": .5}
+            MDLabel:
+                text:'Setor/transfer'
+                font_size: '11dp'
+                pos_hint: {"center_y": .5}
+
+        MDBoxLayout:
+            size_hint: .9, .1
+            pos_hint: {'x':.05, 'y':.0}
+
+            MDRectangleFlatButton:
+                id:cmdsimpan
+                text: "Upload"
+                text_color: "blue"
+                line_color: "blue"
+                font_size: '10sp'
+                size_hint_y: .5
+                pos_hint: {'center_y':.5}
+                on_release: root.simpan()
+
+    MDFloatLayout:
+        size_hint: 1, .08
+        pos_hint: {'center_x':.5,'y':0}
+        canvas:
+            Color:
+                rgb: rgba(50, 96, 168,255)
+            Rectangle:
+                pos: self.pos
+                size: self.size

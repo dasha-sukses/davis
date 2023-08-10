@@ -1,0 +1,121 @@
+<Login_Page>:
+    MDFloatLayout:
+        size_hint: .5,.4
+        pos_hint: {'y':.4}
+        canvas:
+            Color:
+                rgb: rgba(230, 230, 230,255)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+    MDFloatLayout:
+        size_hint: 1,.3
+        pos_hint: {'y':.7}
+        canvas:
+            Color:
+                rgb: rgba(230, 230, 230,255)
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: 0,0,100,0
+
+        MDBoxLayout:
+            size_hint_y: None
+            size_hint_x: None
+            size_x: "1500dp"
+            size_y: "1500dp"
+            orientation: 'vertical'
+            pos_hint: {'center_x': .5, 'center_y': .5}
+
+            FitImage:
+                source: "image/logo.png"
+                size_hint_y: 1
+                #allow_stretch: True
+                #keep_ration : True
+                #pos_hint: {'center_x': .5, 'center_y': .5}
+                #radius:[0,0,150,150]
+
+    MDFloatLayout:
+        id:boxutama
+        size_hint: 1,.7
+        pos_hint: {'y':.0}
+        canvas:
+            Color:
+                rgb: rgba(255, 255, 255,255)
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: 100,0,0,0
+
+        MDLabel:
+            text: "Welcome.."
+            #font_style: "Button"
+            font_size: "40sp"
+            color: 0,0,0,1
+            pos_hint: {"center_x": .5, "center_y": .9}
+            halign: "center"
+
+        MDLabel:
+            text: "[i]Selamat Datang Anggota Serta Calon Anggota\n( Prototype Form System USP )[/i]"
+            font_style: "Caption"
+            font_size: "13sp"
+            markup: True
+            color: rgba(0, 0, 0, 200)
+            pos_hint: {"center_x": .5, "center_y": .8}
+            halign: "center"
+
+        MDTextField:
+            id: userid
+            text: self.text if len(self.text)<=15 else self.text[:15]
+            max_text_length: 15
+            font_size: "12dp"
+            hint_text: "Masukkan User ID"
+            size_hint_x: .5
+            icon_right: "account"
+            pos_hint: {"center_x": .5, "center_y": .65}
+
+        MDTextField:
+            id: pswdid
+            text: self.text if len(self.text)<=10 else self.text[:10]
+            max_text_length: 10
+            font_size: "12dp"
+            password: True
+            hint_text: "Pasword"
+            size_hint_x: .5
+            #icon_left: "account-key"
+            icon_right: "shield-key"
+            pos_hint: {"center_x": .5, "center_y": .5}
+
+        MDFillRoundFlatButton:
+            id:tblsingn
+            text: "[b]Login[/b]"
+            font_style: "Caption"
+            font_size: "14sp"
+            markup: True
+            md_bg_color: 1, 0, 0, 1
+            text_color: 1, 1, 1, 1
+            size_hint: .6, .075
+            pos_hint: {"center_x": .5, "center_y": .3}
+            on_press: root.masukprogram()
+
+        MDBoxLayout:
+            size_hint: .98, .04
+            pos_hint: {'center_x':.5, 'y':.2}
+            MDLabel:
+                text: "[i][ref=Permohonan Anggota Baru]Permohonan Anggota Baru[/ref][/i]"
+                font_style: "Caption"
+                font_size: "10dp"
+                markup: True
+                color: rgba(0, 0, 250, 200)
+                pos_hint: {"center_x": .5, "center_y": .5}
+                halign: "center"
+                on_ref_press: app.pindah_ke(1,1)
+
+        MDIconButton:
+            icon: "location-exit"
+            icon_size: "32sp"
+            pos_hint: {"center_x": .5, "y": .05}
+            on_release:
+                app.get_running_app().stop()
+                #window.close()

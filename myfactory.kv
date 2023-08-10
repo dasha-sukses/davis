@@ -1,0 +1,29 @@
+<Popup_List_One>:
+    title: "List Data"
+    size_hint: .8, .8
+    separator_color: 1, 1, 0, 1
+	background_color: 0,0,1,1
+    MDBoxLayout:
+        orientation: 'vertical'
+        spacing: dp(10)
+        padding: dp(10)
+        canvas:
+            Color:
+                rgb: rgba(255,255,255,255)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        RecycleView:
+            id: DaftarList
+            key_viewclass: 'viewclass'
+            key_size: 'height'
+
+            RecycleBoxLayout:
+                padding: dp(10)
+                spacing: dp(10)
+                default_size: None, dp(55)
+                default_size_hint: 1, None
+                size_hint_y: None
+                height: self.minimum_height
+                orientation: 'vertical'
